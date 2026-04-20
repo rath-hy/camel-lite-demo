@@ -65,7 +65,7 @@ export default function App() {
         />
         <AgentPanel
           title="CaMeL-Protected Agent"
-          subtitle="Capability tags constrain what untrusted data can authorize"
+          subtitle="P-LLM (trusted) + Q-LLM (quarantined) — injection is structurally isolated, then capability-checked"
           steps={protectedSteps}
           isRunning={hasStarted && !protectedDone}
           done={protectedDone}

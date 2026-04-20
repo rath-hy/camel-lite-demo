@@ -11,8 +11,10 @@ export function runProtectedAgent({ onStep, onDone }) {
     for (const step of PROTECTED_STEPS) {
       if (cancelled) return;
       const ms =
-        step.type === 'capability' ? 900 :
-        step.type === 'check'      ? 1200 :
+        step.type === 'boundary_enter' ? 800  :
+        step.type === 'boundary_exit'  ? 800  :
+        step.type === 'capability'     ? 1000 :
+        step.type === 'check'          ? 1200 :
         650 + Math.random() * 550;
       await delay(ms);
       if (cancelled) return;
