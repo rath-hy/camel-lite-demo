@@ -1,15 +1,17 @@
 import { useEffect, useRef } from 'react';
 
 const STEP_ICONS = {
-  p_llm:        '●',
-  p_llm_action: '⚙',
-  q_llm:        '◆',
-  capability:   '🏷',
-  warning:      '⚠',
-  tool_call:    '▶',
-  check:        '🔒',
-  thought:      '💭',
-  action:       '⚙',
+  p_llm:          '●',
+  p_llm_plan:     '◈',
+  p_llm_dataflow: '⇢',
+  p_llm_action:   '⚙',
+  q_llm:          '◆',
+  capability:     '🏷',
+  warning:        '⚠',
+  tool_call:      '▶',
+  check:          '🔒',
+  thought:        '💭',
+  action:         '⚙',
 };
 
 // Groups steps so consecutive q_llm steps (with surrounding boundaries)

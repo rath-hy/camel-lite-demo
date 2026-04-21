@@ -259,6 +259,7 @@
 
 .agent-log {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   padding: 12px 0;
   display: flex;
@@ -350,6 +351,18 @@
 .step-p_llm .step-text        { color: #93c5fd; }
 .step-p_llm_action .step-text { color: var(--c-action); }
 
+/* P-LLM planning steps */
+.step-p_llm_plan,
+.step-p_llm_dataflow {
+  border-left-color: rgba(96, 165, 250, 0.55);
+  background: rgba(96, 165, 250, 0.05);
+  margin: 2px 0;
+}
+.step-p_llm_plan .step-icon,
+.step-p_llm_dataflow .step-icon { color: #60a5fa; }
+.step-p_llm_plan .step-text     { color: #bfdbfe; }
+.step-p_llm_dataflow .step-text { color: #bfdbfe; }
+
 /* Q-LLM steps — quarantined / untrusted */
 .step-q_llm {
   border-left-color: rgba(251, 146, 60, 0.5);
@@ -363,7 +376,6 @@
   margin: 6px 12px;
   border: 1px solid rgba(251, 146, 60, 0.22);
   border-radius: 5px;
-  overflow: hidden;
   background: rgba(251, 146, 60, 0.018);
 }
 

@@ -63,9 +63,9 @@ export default function SetupPanel({ onRun, isRunning, hasStarted }) {
         <button
           className="run-button"
           onClick={onRun}
-          disabled={isRunning || hasStarted}
+          disabled={isRunning}
         >
-          {isRunning ? '⚡ Running…' : hasStarted ? '✓ Complete' : '▶ Run Attack'}
+          {isRunning ? '⚡ Running…' : hasStarted ? '↺ Run Again' : '▶ Run Attack'}
         </button>
       </div>
     </div>

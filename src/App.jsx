@@ -12,9 +12,15 @@ export default function App() {
   const [undefendedDone,  setUndefendedDone]  = useState(false);
   const [protectedDone,   setProtectedDone]   = useState(false);
 
+  const isRunning = hasStarted && (!undefendedDone || !protectedDone);
+
   const handleRun = useCallback(() => {
-    if (hasStarted) return;
+    if (isRunning) return;
     setHasStarted(true);
+    setUndefendedSteps([]);
+    setProtectedSteps([]);
+    setUndefendedDone(false);
+    setProtectedDone(false);
 
     runUndefendedAgent({
       onStep: (step) => setUndefendedSteps((prev) => [...prev, step]),
@@ -25,9 +31,7 @@ export default function App() {
       onStep: (step) => setProtectedSteps((prev) => [...prev, step]),
       onDone: () => setProtectedDone(true),
     });
-  }, [hasStarted]);
-
-  const isRunning = hasStarted && (!undefendedDone || !protectedDone);
+  }, [isRunning]);
 
   return (
     <div className="app">
